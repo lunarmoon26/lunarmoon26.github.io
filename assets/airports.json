@@ -11976,7 +11976,7 @@
     "dst": "E"
   },
   "CDG": {
-    "name": "Charles de Gaulle International Airport",
+    "name": "Paris Charles de Gaulle International Airport",
     "city": "Paris",
     "country": "France",
     "iata": "CDG",
@@ -27384,7 +27384,7 @@
     "dst": "N"
   },
   "SIN": {
-    "name": "Singapore Changi Airport",
+    "name": "Singapore Changi International Airport",
     "city": "Singapore",
     "country": "Singapore",
     "iata": "SIN",
