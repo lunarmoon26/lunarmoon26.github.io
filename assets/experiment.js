@@ -6,43 +6,47 @@ var $experiment = (function() {
   const _dateSelectTypes = ['calendar', 'dropdown'];
   const _trials = {
     low: [
-      {instruction: 'Task - book a one-way ticket for yourself', task: 'Singapore to New York; Next Mon', result: ''},
-      {instruction: 'Task - book a one-way ticket for yourself', task: 'Bangkok to Cleveland; Next Tue', result: ''},
-      {instruction: 'Task - book a one-way ticket for yourself', task: 'London to Tokyo(NRT); In 2 days time', result: ''},
+      {instruction: 'Task - search for a one-way ticket for yourself', task: 'Singapore to New York; Next Mon', result: ''},
+      {instruction: 'Task - search for a one-way ticket for yourself', task: 'Bangkok to Cleveland; Next Tue', result: ''},
+      {instruction: 'Task - search for a one-way ticket for yourself', task: 'London to Tokyo(NRT); In 2 days time', result: ''},
     ],
     med: [
-      {instruction: 'Task - book a one-way ticket for your family', task: 'Denver to Ho Chi Minh; Next Tue; 2 adults, 3 child', result: ''},
-      {instruction: 'Task - book a one-way ticket for your family', task: 'Bangkok to Cleveland; Dec 15 2019; 3 adults, 1 child', result: ''},
-      {instruction: 'Task - book a one-way ticket for your family', task: 'Perth to Taipei; Nov 15 2019; 2 adults, 4 child', result: ''},
+      {instruction: 'Task - search for a one-way ticket for your family', task: 'Denver to Ho Chi Minh; Next Tue; 2 adults, 3 children', result: ''},
+      {instruction: 'Task - search for a one-way ticket for your family', task: 'Bangkok to Cleveland; Dec 15 2019; 3 adults, 1 child', result: ''},
+      {instruction: 'Task - search for a one-way ticket for your family', task: 'Perth to Taipei; Nov 30 2019; 2 adults, 4 children', result: ''},
     ],
     high: [
-      {instruction: 'Task - book a luxury roundtrip for your family', task: 'Miami to Hanoi; next Mon to Thu; 4 adults, 3 child; Business class only', result: ''},
-      {instruction: 'Task - book a normal roundtrip for your family', task: 'Paris to Sydney; Nov 7 2019 to Nov 11 2019; 2 adults, 2 child; Economy class only', result: ''},
-      {instruction: 'Task - book a luxury roundtrip for your family', task: 'Jakarta to Busan; Dec 8 2019 for 10 days; 3 adults, 4 child; Business class only', result: ''},
+      {instruction: 'Task - search for a luxury roundtrip for your family', task: 'Miami to Hanoi; next Mon to Thu; 4 adults, 3 children; Business class only', result: ''},
+      {instruction: 'Task - search for a normal roundtrip for your family', task: 'Paris to Sydney; Dec 25 2019 to Jan 25 2020; 2 adults, 2 children; Economy class only', result: ''},
+      {instruction: 'Task - search for a luxury roundtrip for your family', task: 'Jakarta(HLP) to Busan; Dec 8 2019 for 10 days; 3 adults, 4 children; Business class only', result: ''},
     ],
+    dummy: [
+      {instruction: 'Task - search for a one-way ticket for yourself', task: 'Singapore to Los Angeles; Dec 2 2019', result: ''},
+      {instruction: 'Task - search for a one-way ticket for yourself', task: 'Singapore to Los Angeles; Dec 2 2019', result: ''},
+      {instruction: 'Task - search for a roundtrip for yourself', task: 'Singapore to Los Angeles; Dec 2 2019 to Dec 9 2019', result: ''}
+    ]
   };
-  const _dummyTrial = {instruction: 'Task - try search for a roundtrip', task: 'Singapore to Los Angeles; Mon Dec 2 2019 to Wed Dec 4 2019', result: ''};
   const _dummySteps = {
     1:{
       id: 1,
       technique: 'button',
       complexity: 'med',
       dateSelectType: 'calendar',
-      trials: [_dummyTrial]
+      trials: [_trials.dummy[0]]
     },
     2:{
       id: 2,
       technique: 'button',
       complexity: 'med',
       dateSelectType:'dropdown',
-      trials: [_dummyTrial]
+      trials: [_trials.dummy[1]]
     },
     3:{
       id: 3,
       technique: 'tui',
       complexity: 'med',
       dateSelectType: 'calendar',
-      trials: [_dummyTrial]
+      trials: [_trials.dummy[2]]
     }
   }
 
@@ -128,8 +132,7 @@ var $experiment = (function() {
     getStepIdsForTextUI,
     getStepIdsForButtonUI,
     trials: _trials,
-    dummySteps: _dummySteps,
-    dummyTrial: _dummyTrial
+    dummySteps: _dummySteps
   };
 })();
 
